@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Latte Lab coffee, tea, frappe and smoothie menu in USD and KHR."
+    />
+    <meta name="theme-color" content="#f4f7f1" />
+    <title>Latte Lab Menu</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Latte Lab menu home">
+        <img id="brandLogo" alt="Latte Lab" width="64" height="64" />
+        <span>
+          <strong>LATTE LAB</strong>
+          <small>Café and Tea</small>
+        </span>
+      </a>
+      <button id="qrOpen" class="qr-open" type="button" aria-label="Open menu QR code" title="Open QR code">
+        <img src="/qr.png" alt="Menu QR code" width="72" height="72" />
+      </button>
+    </header>
+
+    <main id="top">
+      <section id="promotionSection" class="promotion-section" aria-labelledby="promotionTitle" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Recommended today</p>
+            <h1 id="promotionTitle">Latte Lab picks</h1>
+          </div>
+          <p lang="km">ភេសជ្ជៈណែនាំសម្រាប់ថ្ងៃនេះ</p>
+        </div>
+
+        <div
+          id="promotionCarousel"
+          class="promotion-carousel"
+          aria-roledescription="carousel"
+          aria-label="Recommended drinks"
+        >
+          <div id="promotionTrack" class="promotion-track"></div>
+          <button
+            id="promotionPrevious"
+            class="carousel-arrow carousel-arrow-previous"
+            type="button"
+            aria-label="Previous recommendation"
+            title="Previous recommendation"
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <button
+            id="promotionNext"
+            class="carousel-arrow carousel-arrow-next"
+            type="button"
+            aria-label="Next recommendation"
+            title="Next recommendation"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
+          <div id="promotionDots" class="carousel-dots" aria-label="Choose recommendation"></div>
+        </div>
+      </section>
+
+      <section id="menu" class="menu-section" aria-labelledby="menuTitle">
+        <div class="section-heading menu-heading">
+          <div>
+            <p class="eyebrow">Cafe and tea menu</p>
+            <h2 id="menuTitle">Choose your drink</h2>
+          </div>
+          <p id="menuCount" class="menu-count"></p>
+        </div>
+
+        <div class="menu-tools">
+          <div class="search-row">
+            <label class="search-box">
+              <span>Search</span>
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Coffee, tea, matcha..."
+                autocomplete="off"
+              />
+            </label>
+            <button id="clearFilters" class="clear-filters" type="button" disabled>
+              Clear
+            </button>
+          </div>
+          <nav id="categoryTabs" class="category-tabs" aria-label="Menu categories"></nav>
+        </div>
+
+        <div id="menuGrid" class="menu-grid" aria-live="polite"></div>
+        <p id="emptyState" class="empty-state" hidden>No drinks found · រកមិនឃើញភេសជ្ជៈ</p>
+      </section>
+    </main>
+
+    <footer>
+      <img id="footerLogo" alt="" width="48" height="48" />
+      <p>Premium coffee · tea · frappe · smoothie</p>
+    </footer>
+
+    <dialog id="imageDialog" class="image-dialog" aria-labelledby="dialogTitle">
+      <button id="dialogClose" class="dialog-close" type="button" aria-label="Close image" title="Close">
+        ×
+      </button>
+      <img id="dialogImage" alt="" />
+      <div class="dialog-caption">
+        <div>
+          <h2 id="dialogTitle"></h2>
+          <p id="dialogKhmer" lang="km"></p>
+        </div>
+        <div id="dialogPrice"></div>
+      </div>
+    </dialog>
+
+    <dialog id="qrDialog" class="qr-dialog" aria-labelledby="qrDialogTitle">
+      <button id="qrClose" class="dialog-close" type="button" aria-label="Close QR code" title="Close">
+        ×
+      </button>
+      <img src="/qr.png" alt="Latte Lab menu QR code" />
+      <div class="qr-caption">
+        <h2 id="qrDialogTitle">Scan to open menu</h2>
+        <p id="qrUrl"></p>
+      </div>
+    </dialog>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
